@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>02 · More cash does not always mean more wealth</title><link rel="stylesheet" href="../assets/course.css"><script defer src="../assets/quiz.js"></script></head><body><main>
+<nav><a href="../index.html">Dashboard</a><a href="../flashcards.html">Flashcards</a><a href="0001-revenue-profit-cash.html">Previous lesson</a><a href="../reference/0002-assets-liabilities-equity.html">Quick reference</a></nav>
+<p class="eyebrow">Business worlds for AI agents / Lesson 02 / 6 minutes</p>
+<h1>More cash does not always mean more wealth.</h1>
+<p class="muted">Your win: track a loan and an inventory purchase without mistaking either for profit.</p>
+<h2>First, retrieve one thing</h2>
+<fieldset data-quiz data-explanation="The April invoice was already revenue. Its collection turns a receivable into cash; it does not create revenue again." data-hint="Think about which month control of the desks transferred, not which month the customer paid."><legend>Cedar collects its April invoice in May. What increases?</legend><button type="button" data-correct="false">May revenue</button><button type="button" data-correct="false">May profit</button><button type="button" data-correct="true">Bank cash</button><p class="feedback" role="status" aria-live="polite"></p></fieldset>
+<h2>A snapshot, not a movie</h2>
+<p>Revenue and profit describe a <em>period</em>. A <strong>balance sheet</strong> (also called a statement of financial position) describes what the company has and the claims against it <em>at a date</em>. Its three building blocks are assets, liabilities, and equity. <a href="#source">[1]</a></p>
+<table><thead><tr><th>Building block</th><th>Meaning</th><th>Cedar example</th></tr></thead><tbody>
+<tr><td><strong>Asset</strong></td><td>A present economic resource controlled by the company because of past events. A resource is a right with the potential to produce economic benefits.</td><td>Bank cash, a customer's debt to Cedar, or inventory held for sale.</td></tr>
+<tr><td><strong>Liability</strong></td><td>A present obligation to transfer an economic resource because of past events.</td><td>A bank loan or an amount owed to a supplier.</td></tr>
+<tr><td><strong>Equity</strong></td><td>The residual interest: assets minus liabilities.</td><td>The owners' accounting interest after deducting obligations—not a separate pot of cash.</td></tr>
+</tbody></table>
+<div class="callout"><strong>Assets = Liabilities + Equity</strong><br>Equivalently: <strong>Equity = Assets − Liabilities</strong>.<br><small>This is an accounting identity, not a causal prediction. Equity here is book equity, not the company's market price. Definitions: <a href="#source">[1, pp. 8–9]</a>.</small></div>
+<h2>Cedar borrows, then buys</h2>
+<p>Continue just after May's $10,000 collection. For this simplified exercise, Cedar's opening $10,000 came from its owners, April's $3,000 profit was retained, and there are no other assets or liabilities. Starting equity is therefore $13,000.</p>
+<table><thead><tr><th>Snapshot</th><th>Cash</th><th>Inventory</th><th>Total assets</th><th>Liabilities</th><th>Equity</th></tr></thead><tbody>
+<tr><td>After collection</td><td>$13,000</td><td>$0</td><td>$13,000</td><td>$0</td><td>$13,000</td></tr>
+<tr><td>Receive $5,000 bank loan</td><td>$18,000</td><td>$0</td><td>$18,000</td><td>$5,000</td><td>$13,000</td></tr>
+<tr><td>Pay $4,000 for resale desks</td><td>$14,000</td><td>$4,000</td><td>$18,000</td><td>$5,000</td><td>$13,000</td></tr>
+</tbody></table>
+<p><strong>The loan:</strong> cash rises, but so does the obligation to repay. Receiving loan principal is not revenue or profit. Ignore interest and fees here; those are separate effects.</p>
+<p><strong>The purchase:</strong> one asset becomes another. Cedar now holds $4,000 of inventory instead of $4,000 of cash. Assume the desks qualify as inventory, are recorded at purchase cost, remain unsold and undamaged, and incur no extra costs. The purchase is not an immediate expense in this example; their cost becomes an expense when sold. Do not generalize this treatment to every purchase. <a href="#inventory-source">[2]</a></p>
+<fieldset data-quiz data-explanation="Equity remains $13,000. After borrowing, $18,000 assets minus $5,000 liabilities equals $13,000. Borrowing alone creates no profit." data-hint="Subtract the loan obligation from total assets. More cash alone does not establish an increase in equity."><legend>Immediately after the $5,000 loan, what is equity?</legend><button type="button" data-correct="true">$13,000</button><button type="button" data-correct="false">$18,000</button><button type="button" data-correct="false">$5,000</button><p class="feedback" role="status" aria-live="polite"></p></fieldset>
+<h2>What this means for agents</h2>
+<p>A Finance agent rewarded only for increasing bank cash could borrow unnecessarily. A Procurement agent can reduce cash by buying inventory without immediately reducing profit. Operations must then store and handle that inventory. In this example these are transaction effects, not evidence that the decisions are good or bad.</p>
+<p><strong>World-model rule:</strong> represent cash, inventory, debt, and equity separately. A useful consistency check is that every modeled transaction preserves Assets = Liabilities + Equity. Passing this check does not prove the transaction is sensible or correctly classified.</p>
+<div class="callout"><strong>Tell your teacher:</strong> Starting from the final row, Cedar receives another $2,000 of resale desks from a supplier and will pay next month. Nothing is sold. What are cash, inventory, total assets, liabilities, and equity now? Does profit change? Explain why.<br><small>Ask the agent about anything unclear; especially “purchase” versus “expense” or “cash” versus “equity.”</small></div>
+<p><strong>Tomorrow's recall:</strong> Without looking, explain why borrowing $5,000 is not $5,000 of profit. Then reconstruct the accounting identity.</p>
+<h2>Primary-source reading</h2>
+<p id="source">[1] <a href="https://www.ifrs.org/content/dam/ifrs/project/conceptual-framework/fact-sheet-project-summary-and-feedback-statement/conceptual-framework-project-summary.pdf">IFRS Foundation: Conceptual Framework project summary</a>, pages 8–9. Read the revised definitions of assets and liabilities and the paragraph defining equity. Page 7 describes the purpose of financial statements. These are the source definitions; Cedar's numbers are fictional applications.</p>
+<p id="inventory-source">[2] <a href="https://www.ifrs.org/issued-standards/list-of-standards/ias-2-inventories/">IFRS Foundation: IAS 2 Inventories overview</a>, “About”: inventory measurement and recognition of inventory cost as an expense when sold.</p>
+<footer><a href="../reference/0002-assets-liabilities-equity.html">Printable reference</a> · Next: <a href="0003-current-ratio.html">which assets and obligations are short-term, and what current ratio can—and cannot—tell us</a>.</footer>
+</main></body></html>
