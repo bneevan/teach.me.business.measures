@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cash conversion cycle · Reference</title><link rel="stylesheet" href="../assets/course.css">  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY0KGRL32C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GY0KGRL32C');
+  </script>
+</head><body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html" aria-label="Cedar home"><span class="brand-mark" aria-hidden="true">c.</span>Cedar<span class="brand-caption">Learning workspace</span></a>
+  <nav aria-label="Course">
+    <a href="../index.html">Dashboard</a>
+    <a href="../exercise-dashboard.html">Exercises</a>
+    <a href="../flashcards.html">Flashcards</a>
+    <a href="../glossary.html">Glossary</a>
+    <a href="../reference/index.html" aria-current="page">Reference</a>
+  </nav>
+</header>
+
+<main id="content">
+<p class="eyebrow">Cedar Desk Co. / Reference 05</p><h1>Working capital & the cash cycle.</h1>
+<p style="margin: 16px 0 24px;"><a class="button" href="../lessons/0005-cash-conversion-cycle.html">Go to Lesson 05: Cash Conversion Cycle <span aria-hidden="true">→</span></a></p>
+<div class="callout"><strong>Cash Conversion Cycle (CCC) = DIO + DSO − DPO</strong><br>The time in days between paying cash for inventory and receiving cash from customer sales. It represents the gap where the business must finance its operations from cash reserves, debt, or equity.</div>
+
+<h2>The core working capital metrics</h2>
+<table>
+<thead><tr><th>Metric</th><th>Name</th><th>Calculation / Definition</th><th>What it measures</th></tr></thead>
+<tbody>
+<tr><td><strong>DIO</strong></td><td>Days Inventory Outstanding</td><td>Average Inventory ÷ COGS × 365 (or days between arrival and shipment)</td><td>How long inventory sits before being sold. Lower means faster stock turns; risk is stockout.</td></tr>
+<tr><td><strong>DSO</strong></td><td>Days Sales Outstanding</td><td>Average Receivables ÷ Credit Sales × 365 (or days between delivery and collection)</td><td>How long customers take to pay invoices. Lower means quicker cash inflow; risk is lost sales from harsh terms.</td></tr>
+<tr><td><strong>Operating Cycle</strong></td><td>Operating Cycle</td><td>DIO + DSO</td><td>The total operational span from receiving goods to collecting cash from customers.</td></tr>
+<tr><td><strong>DPO</strong></td><td>Days Payable Outstanding</td><td>Average Payables ÷ COGS × 365 (or days between invoice and payment)</td><td>How long the company waits before paying suppliers. Higher delays cash outflow; risk is damaged vendor trust.</td></tr>
+<tr><td><strong>CCC</strong></td><td>Cash Conversion Cycle</td><td>DIO + DSO − DPO</td><td>The net financing gap. When negative, suppliers finance the business before customers pay.</td></tr>
+</tbody>
+</table>
+
+<h2>Departmental levers & trade-offs</h2>
+<table>
+<thead><tr><th>Department</th><th>Lever</th><th>Shortens CCC</th><th>Danger of single-metric over-optimization</th></tr></thead>
+<tbody>
+<tr><td><strong>Operations</strong></td><td>Inventory (DIO)</td><td>Produce/order in smaller batches; lean inventory</td><td>Stockouts, machine downtime, inability to fulfill sudden demand spikes</td></tr>
+<tr><td><strong>Sales</strong></td><td>Receivables (DSO)</td><td>Tighter credit terms; aggressive collection calls</td><td>B2B buyers switch to competitors who offer 30-day or 60-day terms</td></tr>
+<tr><td><strong>Procurement</strong></td><td>Payables (DPO)</td><td>Negotiate longer payment windows (e.g. 60 days)</td><td>Suppliers raise prices, withhold volume discounts, or cut credit limits</td></tr>
+<tr><td><strong>Finance</strong></td><td>Treasury & Liquidity</td><td>Balance prompt discounts against funding costs</td><td>Early payments deplete cash reserves before customer collections arrive</td></tr>
+</tbody>
+</table>
+
+<h2>Agent-world rules for working capital</h2>
+<ul>
+<li><strong>Multi-objective balance:</strong> Do not let autonomous agents optimize working capital metrics in isolation. Enforce minimum safety stock days (Operations), competitive credit ranges (Sales), and supplier compliance terms (Procurement).</li>
+<li><strong>Contractual vs. actual:</strong> Separate agreed credit terms from observed historical days. A 30-day invoice that takes 45 days to collect indicates a credit risk or dispute, not an agreed 45-day financing plan.</li>
+<li><strong>Financing cost:</strong> Working capital is not free. When CCC is positive, calculate the carrying cost: Working Capital Needed × Cost of Capital.</li>
+</ul>
+
+<footer>See also: <a href="annualized-return.html">How Annualized Rate of Return Works</a> · Primary sources: <a href="https://corporatefinanceinstitute.com/resources/accounting/cash-conversion-cycle/">CFI: Cash Conversion Cycle Guide</a>; <a href="https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/current-ratio">BDC: Working Capital Ratios</a>; <a href="https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/">IAS 7: Operating Cash Flows</a>.</footer>
+</main></body></html>

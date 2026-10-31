@@ -17,16 +17,28 @@
 - [BDC: Current assets](https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/current-assets) and [Current liabilities](https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/current-liabilities)
   Bank-authored introductory definitions, retrieved and read for lesson 0003. Use for operating-cycle/year horizons and cash-versus-inventory liquidity. Not a substitute for detailed classification rules in the applicable accounting standards.
 
+- [Corporate Finance Institute: Cash Conversion Cycle (CCC)](https://corporatefinanceinstitute.com/resources/accounting/cash-conversion-cycle/)
+  Practitioner guide on working capital cycles, retrieved and read for lesson 0005. Explains the relationship between DIO, DSO, and DPO; defines the operating cycle and net cash conversion cycle; illustrates calculation formulas and corporate implications (including negative CCC). Use for grounding Cedar's timeline in standard corporate finance metrics.
+
+- [BDC: Profit Margins (Gross, Operating, Net)](https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/gross-profit-margin)
+  Business Development Bank of Canada's guides to Gross Profit Margin, Operating Profit Margin, and Net Profit Margin, retrieved and read for lesson 0006. Explains the three tiers of income statement margins, industry benchmark variance, and the difference between operational unit economics and bottom-line profit.
+
+- [IFRS Foundation: IAS 1 — Presentation of Financial Statements](https://www.ifrs.org/issued-standards/list-of-standards/ias-1-presentation-of-financial-statements/)
+  Primary accounting standard overview, retrieved and read for lesson 0006. Standardizes the presentation of profit or loss, segregating revenue, cost of sales, operating expenses, finance costs, and tax expense.
+
+- [BDC: Return on Investment (ROI)](https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/return-on-investment)
+  Business Development Bank of Canada's guide to ROI, return on capital, and performance benchmarking, retrieved and read for lesson 0007. Explains how owners evaluate whether invested money generates adequate profit relative to capital alternatives.
+
+- [Corporate Finance Institute: Return on Invested Capital (ROIC)](https://corporatefinanceinstitute.com/resources/accounting/return-on-invested-capital-roic/)
+  Practitioner guide on ROIC, NOPAT, and invested capital calculations, retrieved and read for lesson 0007. Explains capital allocation efficiency, the DuPont margin vs. turnover decomposition, and value creation when ROIC exceeds the cost of capital.
+
 ## Wisdom (Communities)
 
 Not yet curated. No preference about community participation expressed. Seek appropriate practitioner communities when real-world judgment questions arise.
 
 ## Gaps
 
-- Sources for profitability and return ratios and further liquidity measures.
-- Primary/practitioner sources for inventory days, collection days, payment days, and cash-conversion-cycle measurement before introducing their formulas. Lesson 0004 uses only a fictional event timeline grounded in IAS 7, IFRS 15, and IAS 2.
-- Detailed current/non-current classification rules from the applicable accounting standards; lesson 0003 uses explicit simple assumptions and BDC's introductory definitions.
-- Primary sources for departmental measures across the mission's eleven departments.
+- Primary sources for departmental operational measures across the non-finance departments (HR, IT, Administration, Customer Service, Legal & Compliance).
 - Empirical sources for causal links between operational measures; do not treat plausible dependencies as established causal laws.
 - Agent-world modeling and incentive design sources.
 

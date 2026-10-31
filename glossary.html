@@ -1,0 +1,794 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#174e40">
+  <title>Glossary & Formula Reference · Cedar</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY0KGRL32C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GY0KGRL32C');
+  </script>
+  <link rel="stylesheet" href="assets/course.css">
+  <style>
+    .glossary-hero {
+      margin-bottom: 24px;
+    }
+    .player-card {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+      background: #174e40;
+      color: #f7f8f3;
+      border: 1px solid #133f34;
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      margin: 20px 0 28px;
+      box-shadow: 0 10px 25px -5px rgba(23, 78, 64, 0.35);
+      transition: all 0.2s ease;
+    }
+    .player-topline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .player-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .player-title .pulse {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #79945a;
+    }
+    .player-title.playing .pulse {
+      background: #90ee90;
+      box-shadow: 0 0 10px #90ee90;
+      animation: pulseAnim 1.5s infinite;
+    }
+    @keyframes pulseAnim {
+      0% { opacity: 0.5; transform: scale(0.9); }
+      50% { opacity: 1; transform: scale(1.15); }
+      100% { opacity: 0.5; transform: scale(0.9); }
+    }
+    .player-badge {
+      background: rgba(255, 255, 255, 0.15);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 12px;
+      color: #eaf0e5;
+    }
+    .now-playing-box {
+      background: rgba(0, 0, 0, 0.22);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .now-playing-label {
+      font-size: 0.75rem;
+      color: #b7cbbf;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .now-playing-term {
+      font-size: 1.05rem;
+      font-weight: 650;
+      color: #fff;
+    }
+    .pause-countdown {
+      background: #a35c24;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .pause-countdown.active {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .player-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .ctrl-btn {
+      background: #f7f8f3;
+      color: #174e40;
+      border: 0;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      gap: 6px;
+      transition: background 0.15s, transform 0.1s;
+    }
+    .ctrl-btn:hover {
+      background: #eaf0e5;
+      transform: translateY(-1px);
+    }
+    .ctrl-btn.primary-play {
+      background: #eaf0df;
+      color: #174e40;
+      font-size: 0.95rem;
+      padding: 8px 18px;
+      min-width: 110px;
+    }
+    .ctrl-btn.primary-play:hover {
+      background: #fff;
+    }
+    .ctrl-btn.secondary {
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+    .ctrl-btn.secondary:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+    .select-term-dropdown {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+      max-width: 210px;
+      cursor: pointer;
+    }
+    .select-term-dropdown option {
+      background: #174e40;
+      color: #fff;
+    }
+    .timeline-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: #b7cbbf;
+      font-variant-numeric: tabular-nums;
+    }
+    .timeline-slider {
+      flex: 1;
+      height: 6px;
+      -webkit-appearance: none;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+    }
+    .timeline-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #f7f8f3;
+      cursor: pointer;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+    .filter-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 24px 0 20px;
+    }
+    .search-box {
+      width: 100%;
+      padding: 12px 16px;
+      font-size: 0.95rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      color: var(--ink);
+      outline: none;
+    }
+    .search-box:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(23, 78, 64, 0.12);
+    }
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .category-pill {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .category-pill:hover {
+      background: var(--soft);
+      color: var(--accent);
+    }
+    .category-pill.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .glossary-grid {
+      display: grid;
+      gap: 18px;
+      margin-top: 16px;
+    }
+    .term-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      position: relative;
+    }
+    .term-card:hover {
+      border-color: #9bb7a5;
+    }
+    .term-card.is-active {
+      border-color: var(--accent);
+      background: #fdfefc;
+      box-shadow: 0 0 0 3px rgba(23, 78, 64, 0.2), 0 8px 20px -4px rgba(23, 78, 64, 0.15);
+    }
+    .term-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .term-meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .term-category {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .term-dept {
+      font-size: 0.7rem;
+      background: var(--soft);
+      color: var(--accent);
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .term-title {
+      margin: 0;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+    .term-audio-btn {
+      background: var(--soft);
+      color: var(--accent);
+      border: 1px solid #bed2be;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      font-weight: 650;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 36px;
+      transition: all 0.15s;
+    }
+    .term-audio-btn:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .term-explanation {
+      font-size: 0.95rem;
+      color: var(--ink);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+    .term-formula-box {
+      margin: 10px 0 0;
+      padding: 12px 16px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+    }
+    .term-formula-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .term-formula-math {
+      font-family: inherit;
+      font-size: 1.02rem;
+      font-weight: 650;
+      color: var(--accent);
+      word-break: break-word;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 48px 20px;
+      background: var(--surface);
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      .player-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .ctrl-btn, .select-term-dropdown {
+        width: 100%;
+        max-width: 100%;
+      }
+      .now-playing-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Cedar home">
+    <span class="brand-mark" aria-hidden="true">c.</span>Cedar
+    <span class="brand-caption">Learning workspace</span>
+  </a>
+  <nav aria-label="Course">
+    <a href="index.html">Dashboard</a>
+    <a href="exercise-dashboard.html">Exercises</a>
+    <a href="flashcards.html">Flashcards</a>
+    <a href="glossary.html" aria-current="page">Glossary</a>
+    <a href="reference/index.html">Reference</a>
+  </nav>
+</header>
+
+<main id="content">
+  <div class="glossary-hero">
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Cedar Desk Co. / Master Reference</p>
+    <h1>Business measures glossary.</h1>
+    <p class="hero-description">All the key financial, operational, and capital return terms, plain-English explanations, and formulas gathered in one place. Listen to the continuous spoken guide with 5-second pauses between sets or play individual terms on demand.</p>
+  </div>
+
+  <!-- Audio Player Component -->
+  <section class="player-card" aria-label="Spoken Glossary Audio Player">
+    <div class="player-topline">
+      <div class="player-title" id="playerStatusTitle">
+        <span class="pulse" aria-hidden="true"></span>
+        <span>Spoken Audio Guide</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <span class="player-badge">Kokoro TTS · 5s Pauses</span>
+        <label style="font-size:0.75rem;display:inline-flex;align-items:center;gap:4px;cursor:pointer;">
+          <input type="checkbox" id="autoScrollToggle" checked style="accent-color:#90ee90;"> Auto-scroll
+        </label>
+      </div>
+    </div>
+
+    <div class="now-playing-box">
+      <div>
+        <div class="now-playing-label" id="currentTrackLabel">Ready to play</div>
+        <div class="now-playing-term" id="currentTermTitle">Continuous guide across 39 key terms</div>
+      </div>
+      <div class="pause-countdown" id="pauseCountdown">
+        <span>Next term in <strong id="countdownNum">5</strong>s</span>
+      </div>
+    </div>
+
+    <div class="player-controls">
+      <button class="ctrl-btn primary-play" id="mainPlayBtn" aria-label="Play spoken audio">
+        <span id="playIcon">▶</span> <span id="playText">Play All</span>
+      </button>
+      <button class="ctrl-btn secondary" id="prevTermBtn" title="Previous term" aria-label="Previous term">⏮ Prev</button>
+      <button class="ctrl-btn secondary" id="nextTermBtn" title="Next term" aria-label="Next term">Next ⏭</button>
+      <select class="select-term-dropdown" id="termSelect" aria-label="Jump to specific term">
+        <option value="">Jump to term…</option>
+      </select>
+      <select class="select-term-dropdown" id="speedSelect" style="max-width:90px;" aria-label="Playback speed">
+        <option value="0.75">0.75x</option>
+        <option value="1.0" selected>1.0x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+      </select>
+    </div>
+
+    <div class="timeline-container">
+      <span id="currentTimeDisplay">00:00</span>
+      <input type="range" class="timeline-slider" id="audioTimeline" min="0" max="100" value="0" aria-label="Audio progress scrubber">
+      <span id="totalTimeDisplay">--:--</span>
+    </div>
+
+    <audio id="glossaryAudio" preload="metadata"></audio>
+  </section>
+
+  <!-- Filter & Search Controls -->
+  <section class="filter-bar" aria-label="Filter and Search Terms">
+    <input type="search" class="search-box" id="termSearch" placeholder="Search terms, formulas, or explanations (e.g., ROIC, DSO, gross margin, inventory)..." aria-label="Search terms">
+    <div class="category-pills" id="categoryPills">
+      <button class="category-pill active" data-cat="all">All Terms (39)</button>
+      <button class="category-pill" data-cat="Core Accounting & Income">Core Accounting</button>
+      <button class="category-pill" data-cat="Balance Sheet & Financial Position">Balance Sheet</button>
+      <button class="category-pill" data-cat="Liquidity & Balance Sheet">Liquidity</button>
+      <button class="category-pill" data-cat="Working Capital & Operations">Working Capital & CCC</button>
+      <button class="category-pill" data-cat="Profitability & Margins">Profitability & Margins</button>
+      <button class="category-pill" data-cat="Returns on Capital">Returns on Capital</button>
+      <button class="category-pill" data-cat="Rates of Return & Discounting">Rates of Return</button>
+      <button class="category-pill" data-cat="Commercial & Growth KPIs">Commercial KPIs</button>
+    </div>
+  </section>
+
+  <!-- Glossary Cards Container -->
+  <section class="glossary-grid" id="glossaryGrid" aria-label="Glossary Definitions">
+    <!-- Populated by JavaScript from assets/glossary-data.js -->
+  </section>
+
+  <footer>
+    <strong>Cedar Desk Co. / Conceptual Business Measures</strong>
+    <p>Grounded in IFRS Conceptual Framework, IAS 1, IAS 2, IAS 7, IFRS 15, and Corporate Finance Institute working capital benchmarks. Spoken audio generated locally via Kokoro-82M text-to-speech.</p>
+  </footer>
+</main>
+
+<script src="assets/glossary-data.js"></script>
+<script>
+  (function() {
+    const audio = document.getElementById('glossaryAudio');
+    const playBtn = document.getElementById('mainPlayBtn');
+    const playIcon = document.getElementById('playIcon');
+    const playText = document.getElementById('playText');
+    const playerTitle = document.getElementById('playerStatusTitle');
+    const currentTrackLabel = document.getElementById('currentTrackLabel');
+    const currentTermTitle = document.getElementById('currentTermTitle');
+    const pauseCountdown = document.getElementById('pauseCountdown');
+    const countdownNum = document.getElementById('countdownNum');
+    const prevBtn = document.getElementById('prevTermBtn');
+    const nextBtn = document.getElementById('nextTermBtn');
+    const termSelect = document.getElementById('termSelect');
+    const speedSelect = document.getElementById('speedSelect');
+    const timeline = document.getElementById('audioTimeline');
+    const currentTimeDisplay = document.getElementById('currentTimeDisplay');
+    const totalTimeDisplay = document.getElementById('totalTimeDisplay');
+    const autoScrollToggle = document.getElementById('autoScrollToggle');
+    const searchInput = document.getElementById('termSearch');
+    const categoryPills = document.querySelectorAll('.category-pill');
+    const glossaryGrid = document.getElementById('glossaryGrid');
+
+    let terms = window.glossaryTerms || [];
+    let activeTermIndex = -1;
+    let isUserSeeking = false;
+    let pauseInterval = null;
+
+    // Set audio source
+    if (window.glossaryAudioUrl) {
+      audio.src = window.glossaryAudioUrl;
+    }
+
+    function formatTime(seconds) {
+      if (isNaN(seconds) || seconds < 0) return '00:00';
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60);
+      return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+    }
+
+    // Populate term select dropdown and render cards
+    function initGlossary() {
+      glossaryGrid.innerHTML = '';
+      termSelect.innerHTML = '<option value="">Jump to term…</option>';
+
+      terms.forEach((item, index) => {
+        // Dropdown option
+        const opt = document.createElement('option');
+        opt.value = index;
+        opt.textContent = `${index + 1}. ${item.name}`;
+        termSelect.appendChild(opt);
+
+        // Card HTML
+        const card = document.createElement('article');
+        card.className = 'term-card';
+        card.id = `card-${item.id}`;
+        card.dataset.id = item.id;
+        card.dataset.index = index;
+        card.dataset.category = item.category;
+        card.dataset.text = `${item.name} ${item.formula || ''} ${item.explanation} ${item.department}`.toLowerCase();
+
+        card.innerHTML = `
+          <div class="term-card-header">
+            <div>
+              <div class="term-meta">
+                <span class="term-category">${item.category}</span>
+                <span class="term-dept">${item.department}</span>
+              </div>
+              <h2 class="term-title">${item.name}</h2>
+            </div>
+            <button class="term-audio-btn" data-index="${index}" aria-label="Play audio for ${item.name}">
+              <span>▶</span> Listen
+            </button>
+          </div>
+          <p class="term-explanation">${item.explanation}</p>
+          ${item.formula ? `
+            <div class="term-formula-box">
+              <div class="term-formula-label">Formula</div>
+              <div class="term-formula-math">${item.formula}</div>
+            </div>
+          ` : ''}
+        `;
+
+        glossaryGrid.appendChild(card);
+      });
+    }
+
+    initGlossary();
+
+    // Audio Metadata
+    audio.addEventListener('loadedmetadata', function() {
+      totalTimeDisplay.textContent = formatTime(audio.duration);
+      timeline.max = Math.floor(audio.duration);
+    });
+
+    // Time update handler
+    audio.addEventListener('timeupdate', function() {
+      const cur = audio.currentTime;
+      if (!isUserSeeking) {
+        timeline.value = Math.floor(cur);
+        currentTimeDisplay.textContent = formatTime(cur);
+      }
+
+      // Identify which term is currently playing or if we are in pause
+      let matchingIndex = -1;
+      let inPauseWindow = false;
+      let remainingPause = 0;
+
+      for (let i = 0; i < terms.length; i++) {
+        const t = terms[i];
+        if (cur >= t.audio_start && cur <= t.audio_end) {
+          matchingIndex = i;
+          break;
+        } else if (i < terms.length - 1) {
+          const nextT = terms[i + 1];
+          if (cur > t.audio_end && cur < nextT.audio_start) {
+            inPauseWindow = true;
+            remainingPause = Math.ceil(nextT.audio_start - cur);
+            matchingIndex = i;
+            break;
+          }
+        }
+      }
+
+      if (inPauseWindow) {
+        pauseCountdown.classList.add('active');
+        countdownNum.textContent = remainingPause;
+        currentTrackLabel.textContent = `Set ${matchingIndex + 1} complete · 5s reflection pause`;
+      } else {
+        pauseCountdown.classList.remove('active');
+        if (matchingIndex !== -1) {
+          currentTrackLabel.textContent = `Term ${matchingIndex + 1} of ${terms.length} · ${terms[matchingIndex].category}`;
+          currentTermTitle.textContent = terms[matchingIndex].name;
+        }
+      }
+
+      if (matchingIndex !== -1 && matchingIndex !== activeTermIndex) {
+        highlightActiveTerm(matchingIndex);
+      }
+    });
+
+    function highlightActiveTerm(index) {
+      activeTermIndex = index;
+      document.querySelectorAll('.term-card').forEach((card, idx) => {
+        if (idx === index) {
+          card.classList.add('is-active');
+          if (autoScrollToggle.checked && !isUserSeeking) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } else {
+          card.classList.remove('is-active');
+        }
+      });
+      termSelect.value = index;
+    }
+
+    // Play / Pause control
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play().then(() => {
+          playIcon.textContent = '⏸';
+          playText.textContent = 'Pause';
+          playerTitle.classList.add('playing');
+        }).catch(err => {
+          console.warn("Audio play prevented:", err);
+        });
+      } else {
+        audio.pause();
+        playIcon.textContent = '▶';
+        playText.textContent = 'Resume';
+        playerTitle.classList.remove('playing');
+      }
+    }
+
+    playBtn.addEventListener('click', togglePlay);
+
+    audio.addEventListener('play', () => {
+      playIcon.textContent = '⏸';
+      playText.textContent = 'Pause';
+      playerTitle.classList.add('playing');
+    });
+
+    audio.addEventListener('pause', () => {
+      playIcon.textContent = '▶';
+      playText.textContent = 'Resume';
+      playerTitle.classList.remove('playing');
+    });
+
+    audio.addEventListener('ended', () => {
+      playIcon.textContent = '▶';
+      playText.textContent = 'Replay';
+      playerTitle.classList.remove('playing');
+      currentTrackLabel.textContent = 'Completed';
+      currentTermTitle.textContent = 'Audio guide finished';
+      pauseCountdown.classList.remove('active');
+    });
+
+    // Seek Timeline
+    timeline.addEventListener('input', function() {
+      isUserSeeking = true;
+      currentTimeDisplay.textContent = formatTime(timeline.value);
+    });
+
+    timeline.addEventListener('change', function() {
+      audio.currentTime = timeline.value;
+      isUserSeeking = false;
+      if (audio.paused) audio.play();
+    });
+
+    // Speed Control
+    speedSelect.addEventListener('change', function() {
+      audio.playbackRate = parseFloat(this.value);
+    });
+
+    // Jump to Term
+    function jumpToTerm(index) {
+      if (index >= 0 && index < terms.length) {
+        const target = terms[index];
+        audio.currentTime = target.audio_start;
+        highlightActiveTerm(index);
+        if (audio.paused) {
+          audio.play();
+        }
+      }
+    }
+
+    termSelect.addEventListener('change', function() {
+      if (this.value !== "") {
+        jumpToTerm(parseInt(this.value, 10));
+      }
+    });
+
+    prevBtn.addEventListener('click', function() {
+      if (activeTermIndex > 0) {
+        jumpToTerm(activeTermIndex - 1);
+      } else {
+        jumpToTerm(0);
+      }
+    });
+
+    nextBtn.addEventListener('click', function() {
+      if (activeTermIndex < terms.length - 1) {
+        jumpToTerm(activeTermIndex + 1);
+      }
+    });
+
+    // Click on individual term card Listen button
+    glossaryGrid.addEventListener('click', function(e) {
+      const btn = e.target.closest('.term-audio-btn');
+      if (btn) {
+        const idx = parseInt(btn.dataset.index, 10);
+        jumpToTerm(idx);
+      }
+    });
+
+    // Search and Category Filter
+    let currentCategory = 'all';
+
+    function applyFilters() {
+      const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
+
+      document.querySelectorAll('.term-card').forEach(card => {
+        const text = card.dataset.text;
+        const cat = card.dataset.category;
+
+        const matchesSearch = !query || text.includes(query);
+        const matchesCategory = currentCategory === 'all' || cat.toLowerCase().includes(currentCategory.toLowerCase());
+
+        if (matchesSearch && matchesCategory) {
+          card.hidden = false;
+          visibleCount++;
+        } else {
+          card.hidden = true;
+        }
+      });
+
+      let noRes = document.getElementById('noResultsMessage');
+      if (visibleCount === 0) {
+        if (!noRes) {
+          noRes = document.createElement('div');
+          noRes.id = 'noResultsMessage';
+          noRes.className = 'empty-state';
+          noRes.innerHTML = '<h3>No terms match your search.</h3><p>Try clearing filters or checking spelling.</p>';
+          glossaryGrid.appendChild(noRes);
+        }
+        noRes.hidden = false;
+      } else if (noRes) {
+        noRes.hidden = true;
+      }
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+
+    categoryPills.forEach(pill => {
+      pill.addEventListener('click', function() {
+        categoryPills.forEach(p => p.classList.remove('active'));
+        this.classList.add('active');
+        currentCategory = this.dataset.cat;
+        applyFilters();
+      });
+    });
+
+    // Keyboard Shortcuts
+    window.addEventListener('keydown', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
+      if (e.code === 'Space') {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.code === 'ArrowRight') {
+        e.preventDefault();
+        if (activeTermIndex < terms.length - 1) jumpToTerm(activeTermIndex + 1);
+      } else if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        if (activeTermIndex > 0) jumpToTerm(activeTermIndex - 1);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

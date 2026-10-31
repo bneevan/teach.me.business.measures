@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>06 · Profitability: From Gross to Net</title><link rel="stylesheet" href="../assets/course.css"><script defer src="../assets/quiz.js"></script>  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY0KGRL32C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GY0KGRL32C');
+  </script>
+</head><body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html" aria-label="Cedar home"><span class="brand-mark" aria-hidden="true">c.</span>Cedar<span class="brand-caption">Learning workspace</span></a>
+  <nav aria-label="Course">
+    <a href="../index.html">Dashboard</a>
+    <a href="../exercise-dashboard.html">Exercises</a>
+    <a href="../flashcards.html">Flashcards</a>
+    <a href="../glossary.html">Glossary</a>
+    <a href="../reference/index.html">Reference</a>
+  </nav>
+</header>
+
+<main id="content">
+<p class="eyebrow">Business worlds for AI agents / Lesson 06 / 8 minutes</p><h1>Profitability:<br>From gross to net.</h1>
+<p class="muted">Your win: trace revenue down the income statement waterfall, calculate Gross, Operating, and Net margins, and map where all 11 departments live on the P&L.</p>
+<p style="margin: 16px 0 24px;"><a class="button" href="../reference/0006-profitability-and-margins.html">Quick reference: Profitability & margins <span aria-hidden="true">↗</span></a></p>
+
+<h2>Recall before we add anything</h2>
+<fieldset data-quiz data-explanation="Cash Conversion Cycle = DIO + DSO - DPO. Here, 20 days inventory + 40 days collection - 30 days supplier credit = 30 days." data-hint="Add the days Cedar waits (DIO + DSO), then subtract the financing days suppliers provide (DPO)."><legend>If a company has 20 days DIO, 40 days DSO, and 30 days DPO, what is its cash conversion cycle?</legend><button type="button" data-correct="true">30 days</button><button type="button" data-correct="false">50 days</button><button type="button" data-correct="false">90 days</button><p class="feedback" role="status" aria-live="polite"></p></fieldset>
+
+<h2>The three tiers of profit</h2>
+<p>Revenue (the "top line") does not belong entirely to the owners. As goods are made, sold, and supported, costs peel away at three distinct stages: <a href="#source-bdc-margins">[1]</a></p>
+
+<table>
+<thead><tr><th>Tier</th><th>Formula</th><th>What it measures</th><th>Controlling departments</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>1. Gross Profit</strong><br><small>Margin: Gross Profit ÷ Revenue</small></td>
+  <td><strong>Revenue − COGS</strong></td>
+  <td><strong>Product efficiency:</strong> Profit left after paying the direct costs of producing desks (lumber, hardware, factory labor).</td>
+  <td><strong>Procurement, Operations, Product R&D:</strong> material purchase prices, manufacturing waste, assembly speed.</td>
+</tr>
+<tr>
+  <td><strong>2. Operating Profit (EBIT)</strong><br><small>Margin: Operating Profit ÷ Revenue</small></td>
+  <td><strong>Gross Profit − Operating Expenses</strong></td>
+  <td><strong>Commercial viability:</strong> Profit left after paying all ongoing operating overhead (salaries, marketing, rent, software).</td>
+  <td><strong>Sales, Marketing, HR, IT, Customer Service, Admin, Legal:</strong> headcounts, commissions, ad spend, cloud fees.</td>
+</tr>
+<tr>
+  <td><strong>3. Net Profit</strong><br><small>Margin: Net Profit ÷ Revenue</small></td>
+  <td><strong>Operating Profit − Interest − Taxes</strong></td>
+  <td><strong>The bottom line:</strong> The ultimate residual profit available to reinvest in growth or distribute to shareholders.</td>
+  <td><strong>Finance & Executive Leadership:</strong> debt structure, interest rates, capital allocation, tax compliance.</td>
+</tr>
+</tbody>
+</table>
+
+<fieldset data-quiz data-explanation="Marketing, IT software, and HR recruitment are operational overhead (SG&A) deducted between Gross Profit and Operating Profit. They are not direct costs of building the desks." data-hint="These are running costs of running the business, not direct factory materials or loan interest."><legend>Where do marketing campaigns, IT software licenses, and HR recruitment costs appear on the income statement?</legend><button type="button" data-correct="false">Direct production expenses</button><button type="button" data-correct="true">Operating overhead expenses</button><button type="button" data-correct="false">Financing interest expenses</button><p class="feedback" role="status" aria-live="polite"></p></fieldset>
+
+<h2>Mapping all 11 departments to the P&L</h2>
+<p>Every department in an enterprise leaves its fingerprint on the income statement:</p>
+<table>
+<thead><tr><th>Income Statement Layer</th><th>Departments involved</th><th>Typical departmental cost driver</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Top Line: Revenue</strong></td>
+  <td><strong>Sales, Marketing, Customer Service</strong></td>
+  <td>Prices, deal volume, customer retention, upsells, discount structures.</td>
+</tr>
+<tr>
+  <td><strong>Direct Cost: COGS</strong></td>
+  <td><strong>Procurement, Operations, Product/R&D</strong></td>
+  <td>Raw materials, factory machinery depreciation, direct assembly labor, shipping freight.</td>
+</tr>
+<tr>
+  <td><strong>Operating Expenses (SG&A)</strong></td>
+  <td><strong>Marketing, Sales, Customer Service,<br>HR, IT, Administration, Legal & Compliance</strong></td>
+  <td>Advertising campaigns, sales travel, support reps, recruitment fees, payroll, cloud infrastructure, office rent, compliance audits.</td>
+</tr>
+<tr>
+  <td><strong>Financing & Tax</strong></td>
+  <td><strong>Finance / Treasury</strong></td>
+  <td>Bank loan interest, credit line fees, corporate income taxes.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Margins vs. Dollars: The Agent Optimization Trap</h2>
+<p>Autonomous agents must navigate a fundamental tension between <strong>percentages</strong> and <strong>absolute dollars</strong>:</p>
+<div class="callout">
+<strong>The Percentage Illusion:</strong>
+<ul>
+  <li>Suppose Cedar sells custom desks with a <strong>50% Gross Margin</strong> ($1,000 price, $500 COGS = $500 gross profit per desk).</li>
+  <li>A corporate client offers to buy 100 standard desks in bulk, but demands a volume discount: $800 price, $500 COGS = $300 profit per desk (a lower <strong>37.5% Gross Margin</strong>).</li>
+  <li>An AI agent rewarded solely on <em>Gross Margin Percentage</em> would reject the deal.</li>
+  <li>Yet the deal generates <strong>$30,000 in cash profit</strong> to cover overhead! Optimizing percentage margin in isolation destroys total earnings.</li>
+</ul>
+</div>
+
+<h2>Agent-world guardrails for margins</h2>
+<ol>
+  <li><strong>Multi-tier visibility:</strong> An agent optimizing Marketing or Sales spend must observe whether incremental revenue covers both direct COGS <em>and</em> operational overhead.</li>
+  <li><strong>Contribution margin test:</strong> Before approving a customer discount, verify: <strong>Discounted Price &gt; Direct Variable COGS</strong>. If price falls below variable cost, each sale loses money.</li>
+  <li><strong>Beware false productivity:</strong> An HR or IT agent that indiscriminately cuts training or software tools improves this quarter's operating margin, but damages employee retention and customer satisfaction next quarter.</li>
+</ol>
+
+<h2>Your turn: evaluate a marketing campaign</h2>
+<div class="callout">
+<strong>Tell your teacher:</strong> Cedar has monthly revenue of <strong>$100,000</strong>.
+<ul>
+  <li>Cost of Goods Sold (COGS) is <strong>$60,000</strong>.</li>
+  <li>Operating Expenses (SG&A across Sales, Marketing, HR, IT, Admin) are <strong>$25,000</strong>.</li>
+  <li>Bank loan interest is <strong>$3,000</strong>; corporate taxes are <strong>$2,400</strong>.</li>
+</ul>
+<ol>
+  <li>Calculate Cedar's <strong>Gross Profit</strong>, <strong>Operating Profit</strong>, and <strong>Net Profit</strong> in dollars.</li>
+  <li>Calculate Cedar's <strong>Gross Margin %</strong>, <strong>Operating Margin %</strong>, and <strong>Net Margin %</strong>.</li>
+  <li>An automated Marketing agent proposes a <strong>$5,000 advertising campaign</strong> that generates <strong>$10,000 in new sales</strong>. Assuming the same 60% COGS rate and no other expense changes, how much does Cedar's Operating Profit change in dollars? Does Operating Margin % go up or down?</li>
+</ol>
+<small>Ask the agent anything unclear about income statement categories, margin formulas, or departmental cost allocations.</small>
+</div>
+
+<h2>Primary-source reading</h2>
+<p id="source-bdc-margins">[1] <a href="https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/gross-profit-margin">BDC: Gross Profit Margin</a>, <a href="https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/operating-profit-margin">Operating Profit Margin</a>, and <a href="https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/net-profit-margin">Net Profit Margin</a>: definitions, industry benchmarks, and multi-tier income statement analysis.</p>
+<p id="source-ias1">[2] <a href="https://www.ifrs.org/issued-standards/list-of-standards/ias-1-presentation-of-financial-statements/">IFRS Foundation: IAS 1 Presentation of Financial Statements</a>: requirements for presenting revenue, operating expenses, finance costs, and profit or loss.</p>
+
+<footer><a href="0005-cash-conversion-cycle.html">← Previous lesson</a> · <a href="../reference/0006-profitability-and-margins.html">Printable profitability & margins reference</a> · <a href="0007-roi-and-roic.html">Next lesson: 07 · Returns on Capital (ROI & ROIC) →</a></footer>
+</main></body></html>

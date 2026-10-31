@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#174e40">
   <title>Cedar · Learning dashboard</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY0KGRL32C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GY0KGRL32C');
+  </script>
   <link rel="stylesheet" href="assets/course.css">
   <script defer src="assets/revision-data.js"></script>
   <script defer src="assets/revision.js"></script>
@@ -13,7 +22,7 @@
 <a class="skip-link" href="#content">Skip to content</a>
 <header class="site-header">
   <a class="brand" href="index.html" aria-label="Cedar home"><span class="brand-mark" aria-hidden="true">c.</span>Cedar<span class="brand-caption">Learning workspace</span></a>
-  <nav aria-label="Course"><a href="index.html" aria-current="page">Dashboard</a><a href="flashcards.html">Flashcards</a><a href="reference/0001-revenue-profit-cash.html">Reference</a></nav>
+  <nav aria-label="Course"><a href="index.html" aria-current="page">Dashboard</a><a href="exercise-dashboard.html">Exercises</a><a href="flashcards.html">Flashcards</a><a href="glossary.html">Glossary</a><a href="reference/index.html">Reference</a></nav>
 </header>
 <main id="content">
   <section class="dashboard-hero" aria-labelledby="welcome-title">
@@ -21,8 +30,8 @@
       <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Cedar Desk Co. / Your learning workspace</p>
       <h1 id="welcome-title">See the business.<br><span>Connect the dots.</span></h1>
       <p class="hero-description">Understand how money, people, and decisions fit together. Build a business world you can reason about—and ground a world for AI agents.</p>
-      <a class="button primary" href="lessons/0004-follow-the-cash.html">Continue learning <span aria-hidden="true">↗</span></a>
-      <p class="hero-caption">Up next: Lesson 04 · Follow the cash · 6 min</p>
+      <a class="button primary" href="lessons/0007-roi-and-roic.html">Start lesson 07 <span aria-hidden="true">→</span></a>
+      <p class="hero-caption">Up next: Lesson 07 · Returns on Capital: ROI & ROIC · 8 min</p>
     </div>
     <aside class="review-card" aria-labelledby="review-title">
       <div class="card-topline"><span class="eyebrow">A little practice, lasting connections</span><span class="spark" aria-hidden="true">✳</span></div>
@@ -30,13 +39,15 @@
       <p>Small recall sessions help the ideas stick. Try answering before you reveal.</p>
       <p class="due-summary"><strong id="due-count">Checking…</strong><span>cards due for review</span></p>
       <a class="button" href="flashcards.html">Start a recall session <span aria-hidden="true">→</span></a>
+      <a class="button" style="margin-top:8px;width:100%;justify-content:space-between;" href="exercise-dashboard.html">Daily exercises (6 sets) <span aria-hidden="true">→</span></a>
+      <a class="button" style="margin-top:8px;width:100%;justify-content:space-between;" href="glossary.html">Spoken glossary & formulas (39 terms) <span aria-hidden="true">→</span></a>
       <details class="storage-details"><summary>About your review dates</summary><p id="storage-status"></p></details>
       <noscript><p>Enable JavaScript to see review dates. Lessons and reference pages still work without it.</p></noscript>
     </aside>
   </section>
 
   <section class="course-section" aria-labelledby="course-title">
-    <div class="section-heading"><div><p class="eyebrow">01 / The foundations</p><h2 id="course-title">Your learning path</h2></div><span class="section-note">Four lessons. One connected picture.</span></div>
+    <div class="section-heading"><div><p class="eyebrow">01 / Foundations, working capital & returns</p><h2 id="course-title">Your learning path</h2></div><span class="section-note">Seven lessons. One connected picture.</span></div>
     <div class="lesson-grid">
       <article class="lesson-card">
         <div class="card-topline"><span class="lesson-number">01</span><span class="badge">Foundations</span></div>
@@ -53,10 +64,25 @@
         <h3>A ratio is not a payment plan</h3><p>Current assets, current liabilities, and current ratio.</p>
         <a class="lesson-link" href="lessons/0003-current-ratio.html">Revisit lesson <span aria-hidden="true">↗</span></a>
       </article>
-      <article class="lesson-card next-lesson">
-        <div class="card-topline"><span class="lesson-number">04</span><span class="badge">Up next · 6 min</span></div>
+      <article class="lesson-card">
+        <div class="card-topline"><span class="lesson-number">04</span><span class="badge">Foundations</span></div>
         <h3>Follow the cash, not just the sale</h3><p>Put Procurement, Operations, Sales, and Finance on the same timeline.</p>
-        <a class="lesson-link" href="lessons/0004-follow-the-cash.html">Start lesson <span aria-hidden="true">→</span></a>
+        <a class="lesson-link" href="lessons/0004-follow-the-cash.html">Revisit lesson <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="lesson-card">
+        <div class="card-topline"><span class="lesson-number">05</span><span class="badge">Working capital</span></div>
+        <h3>Count the days cash stays locked</h3><p>DIO, DSO, DPO, and the Cash Conversion Cycle.</p>
+        <a class="lesson-link" href="lessons/0005-cash-conversion-cycle.html">Revisit lesson <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="lesson-card">
+        <div class="card-topline"><span class="lesson-number">06</span><span class="badge">Profitability</span></div>
+        <h3>Profitability: From gross to net</h3><p>Gross, Operating, and Net margins across 11 departments.</p>
+        <a class="lesson-link" href="lessons/0006-profitability-and-margins.html">Revisit lesson <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="lesson-card next-lesson">
+        <div class="card-topline"><span class="lesson-number">07</span><span class="badge">Up next · 8 min</span></div>
+        <h3>Returns on capital: ROI and ROIC</h3><p>Connecting the income statement to the balance sheet.</p>
+        <a class="lesson-link" href="lessons/0007-roi-and-roic.html">Start lesson <span aria-hidden="true">→</span></a>
       </article>
     </div>
   </section>
@@ -74,12 +100,16 @@
     <section class="shelf" aria-labelledby="shelf-title">
       <p class="eyebrow">Good to have nearby</p><h2 id="shelf-title">Your reference shelf</h2>
       <ul class="resource-list">
-        <li><a href="reference/0001-revenue-profit-cash.html"><span>Revenue, profit & cash<small>Printable reference · 01</small></span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="reference/index.html"><span>Revenue, profit & cash<small>Printable reference · 01</small></span><span aria-hidden="true">↗</span></a></li>
         <li><a href="reference/0002-assets-liabilities-equity.html"><span>Assets, liabilities & equity<small>Printable reference · 02</small></span><span aria-hidden="true">↗</span></a></li>
         <li><a href="reference/0003-current-ratio.html"><span>Current ratio<small>Printable reference · 03</small></span><span aria-hidden="true">↗</span></a></li>
         <li><a href="reference/0004-cash-timeline.html"><span>Cash timeline<small>Printable reference · 04</small></span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="reference/0005-cash-conversion-cycle.html"><span>Cash conversion cycle<small>Printable reference · 05</small></span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="reference/0006-profitability-and-margins.html"><span>Profitability & margins<small>Printable reference · 06</small></span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="reference/0007-roi-and-roic.html"><span>ROI & ROIC<small>Printable reference · 07</small></span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="reference/annualized-return.html"><span>Annualized rate of return<small>Guide & corner cases</small></span><span aria-hidden="true">↗</span></a></li>
       </ul>
-      <details class="course-notes"><summary>About this course & sources</summary><ul><li><a href="MISSION.md">Learning mission</a></li><li><a href="RESOURCES.md">Curated primary sources</a></li></ul></details>
+      <details class="course-notes"><summary>About this course & sources</summary><ul><li><a href="mission.html">Learning mission</a></li><li><a href="resources.html">Curated primary sources</a></li><li><a href="notes.html">Course notes</a></li></ul></details>
     </section>
   </div>
   <footer><strong>Cedar Desk Co.</strong><p>Flashcard ratings are self-assessments, not proof of mastery. Ask your teacher for clarification or the next lesson. Markdown links may open as plain text.</p></footer>

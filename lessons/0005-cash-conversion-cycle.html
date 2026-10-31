@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>05 · The Cash Conversion Cycle</title><link rel="stylesheet" href="../assets/course.css"><script defer src="../assets/quiz.js"></script>  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GY0KGRL32C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-GY0KGRL32C');
+  </script>
+</head><body>
+<a class="skip-link" href="#content">Skip to content</a>
+<header class="site-header">
+  <a class="brand" href="../index.html" aria-label="Cedar home"><span class="brand-mark" aria-hidden="true">c.</span>Cedar<span class="brand-caption">Learning workspace</span></a>
+  <nav aria-label="Course">
+    <a href="../index.html">Dashboard</a>
+    <a href="../exercise-dashboard.html">Exercises</a>
+    <a href="../flashcards.html">Flashcards</a>
+    <a href="../glossary.html">Glossary</a>
+    <a href="../reference/index.html">Reference</a>
+  </nav>
+</header>
+
+<main id="content">
+<p class="eyebrow">Business worlds for AI agents / Lesson 05 / 7 minutes</p><h1>Count the days<br>cash stays locked.</h1>
+<p class="muted">Your win: calculate the Cash Conversion Cycle (CCC = DIO + DSO − DPO), understand who controls each lever, and identify the trade-offs of squeezing working capital.</p>
+<p style="margin: 16px 0 24px;"><a class="button" href="../reference/0005-cash-conversion-cycle.html">Quick reference: Cash conversion cycle <span aria-hidden="true">↗</span></a></p>
+
+<h2>Recall before we add anything</h2>
+<fieldset data-quiz data-explanation="Cedar pays the supplier on day 20 but does not collect from the customer until day 40. During that 20-day interval, operations must be funded by available cash or arranged financing." data-hint="Future sales bring cash later, not now. What existing asset must cover payments today?"><legend>Cedar pays its supplier on day 20 and collects from its customer on day 40. During that 20-day gap, what funds the company?</legend><button type="button" data-correct="false">Future sales revenue</button><button type="button" data-correct="true">Existing cash reserves</button><button type="button" data-correct="false">Supplier credit balance</button><p class="feedback" role="status" aria-live="polite"></p></fieldset>
+
+<h2>From a dated timeline to three standard measures</h2>
+<p>In Lesson 04, Cedar bought desks on credit on day 0, delivered them on credit on day 10, paid the supplier on day 20, and collected from the customer on day 40. Corporate finance standardizes those intervals into three working capital measures: <a href="#source-cfi-ccc">[1]</a></p>
+<table>
+<thead><tr><th>Measure</th><th>Meaning</th><th>Cedar's baseline cycle</th><th>Departments responsible</th></tr></thead>
+<tbody>
+<tr><td><strong>DIO</strong><br><small>Days Inventory Outstanding</small></td><td>How long goods sit in inventory before delivery or sale.</td><td><strong>10 days</strong><br>(Day 0 to Day 10)</td><td><strong>Operations & Procurement:</strong> production schedules, warehouse space, order quantities.</td></tr>
+<tr><td><strong>DSO</strong><br><small>Days Sales Outstanding</small></td><td>How long customer invoices remain unpaid after delivery.</td><td><strong>30 days</strong><br>(Day 10 to Day 40)</td><td><strong>Sales & Credit:</strong> customer credit checks, billing accuracy, collection follow-up.</td></tr>
+<tr><td><strong>Operating Cycle</strong></td><td>Total time from receiving inventory to collecting customer cash (DIO + DSO).</td><td><strong>40 days</strong><br>(10 + 30 days)</td><td>Overall business process span across Operations and Sales.</td></tr>
+<tr><td><strong>DPO</strong><br><small>Days Payable Outstanding</small></td><td>How long the company takes to pay its trade suppliers.</td><td><strong>20 days</strong><br>(Day 0 to Day 20)</td><td><strong>Procurement & Treasury:</strong> supplier payment terms, invoice approvals, payment scheduling.</td></tr>
+</tbody>
+</table>
+
+<h2>The Cash Conversion Cycle formula</h2>
+<p>The <strong>Cash Conversion Cycle (CCC)</strong> measures the net time (in days) between paying for goods and collecting cash from customers. It expresses the gap that requires external funding: <a href="#source-cfi-ccc">[1]</a></p>
+<div class="callout">
+<strong>The CCC Formula:</strong><br>
+<div class="formula">CCC = DIO + DSO − DPO</div>
+<p>Cedar’s baseline: 10 days (inventory) + 30 days (receivable) − 20 days (payable) = <strong>20 days</strong></p>
+</div>
+<p>During those <strong>20 days</strong> (from day 20 to day 40), Cedar has sent $4,000 of cash to the supplier but has received nothing yet from the customer. Cedar's cash is tied up in working capital. A shorter cycle means cash returns to the bank faster.</p>
+
+<fieldset data-quiz data-explanation="15 days in inventory (DIO) plus 30 days to collect (DSO) minus 25 days allowed by suppliers (DPO) leaves a 20-day funding cycle: 15 + 30 - 25 = 20." data-hint="Add the days Cedar waits (inventory holding plus customer collection), then subtract the days suppliers wait for payment."><legend>If a company has 15 days DIO, 30 days DSO, and 25 days DPO, what is its cash conversion cycle?</legend><button type="button" data-correct="false">10 days</button><button type="button" data-correct="true">20 days</button><button type="button" data-correct="false">70 days</button><p class="feedback" role="status" aria-live="polite"></p></fieldset>
+
+<h2>The trade-offs: why you cannot squeeze CCC to zero naively</h2>
+<p>Every department has levers to alter the cycle, but aggressive single-metric optimization creates immediate operational risks:</p>
+<table>
+<thead><tr><th>Department & Lever</th><th>Action to shorten CCC</th><th>Hidden danger or trade-off</th></tr></thead>
+<tbody>
+<tr><td><strong>Operations (DIO)</strong></td><td>Slash inventory holding levels to the bare minimum.</td><td><strong>Stockouts:</strong> Cedar runs out of desks, delaying deliveries, disappointing customers, and losing sales.</td></tr>
+<tr><td><strong>Sales (DSO)</strong></td><td>Demand upfront cash or enforce rigid 7-day payment terms.</td><td><strong>Customer loss:</strong> B2B buyers switch to competitors offering flexible 30-day or 60-day terms.</td></tr>
+<tr><td><strong>Procurement (DPO)</strong></td><td>Unilaterally stretch payments to suppliers out to 60 days.</td><td><strong>Supplier conflict:</strong> suppliers halt deliveries, add financing penalties, or refuse volume discounts.</td></tr>
+</tbody>
+</table>
+
+<h2>Negative CCC: when suppliers fund your business</h2>
+<p>When DPO exceeds the entire operating cycle (DPO &gt; DIO + DSO), the cash conversion cycle becomes <strong>negative</strong>. Retailers and grocery chains frequently achieve this: customers pay instantly at checkout (DSO ≈ 0), inventory sells in 5 days (DIO = 5), while suppliers are paid on 45-day terms (DPO = 45). The resulting CCC is −40 days—meaning suppliers provide free operational financing before the company pays a single dollar. <a href="#source-cfi-ccc">[1]</a></p>
+
+<h2>Agent-world rules and guardrails</h2>
+<div class="callout">
+<strong>Design guardrail for business agents:</strong>
+<ol>
+<li><strong>Never give an agent a single-metric CCC objective.</strong> An automated procurement agent maximizing DPO will destroy vendor trust; an automated sales agent minimizing DSO will reject profitable credit customers.</li>
+<li><strong>Model explicit constraints:</strong> bound DIO by a safety-stock threshold, bound DSO by market competitive terms, and bound DPO by contractual credit agreements.</li>
+<li><strong>Calculate dollar cost of the cycle:</strong> A 20-day CCC on $10,000 daily sales locks up $200,000 of cash. If that cash must be borrowed at 8% annual interest, the cycle carries an explicit financing expense.</li>
+</ol>
+</div>
+
+<h2>Your turn: evaluate an early-payment discount</h2>
+<div class="callout">
+<strong>Tell your teacher:</strong> Cedar's supplier offers a <strong>2% prompt-payment discount</strong> if Cedar pays on <strong>day 5</strong> instead of day 20. Desks are still delivered to customers on day 10, and customers still pay on day 40.
+<ol>
+<li>What is Cedar's new DPO, and what is its new Cash Conversion Cycle (CCC)?</li>
+<li>In dollars, how much cash does Cedar save on the $4,000 inventory purchase with the 2% discount?</li>
+<li>Immediately after paying on day 5 (starting with $5,000 cash), how much cash is left in Cedar's bank until day 40? What risk does this earlier outflow create?</li>
+</ol>
+<small>Ask the agent anything unclear about the working capital formulas, departmental trade-offs, or cash balances.</small>
+</div>
+
+<h2>Primary-source reading</h2>
+<p id="source-cfi-ccc">[1] <a href="https://corporatefinanceinstitute.com/resources/accounting/cash-conversion-cycle/">Corporate Finance Institute: Cash Conversion Cycle (CCC)</a>: standard formulas for DIO, DSO, DPO, operating cycle, and working capital interpretation.</p>
+<p id="source-bdc">[2] <a href="https://www.bdc.ca/en/articles-tools/entrepreneur-toolkit/templates-business-guides/glossary/current-ratio">BDC: Working Capital & Liquidity Ratios</a>: relationship between current assets, operating liquidity, and short-term debt servicing.</p>
+
+<footer><a href="0004-follow-the-cash.html">← Previous lesson</a> · <a href="../reference/0005-cash-conversion-cycle.html">Printable cash conversion cycle reference</a> · <a href="0006-profitability-and-margins.html">Next lesson: 06 · Profitability & Margins →</a></footer>
+</main></body></html>
